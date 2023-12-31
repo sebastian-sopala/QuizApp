@@ -17,8 +17,8 @@ class QuestionRepository @Inject constructor(private val api: QuestionApi) {
             if(listOfQuestions.data.toString().isNotEmpty()) listOfQuestions.isLoading = false
 
         }catch (exception: Exception) {
-            listOfQuestions.exception = exception
-            Log.d("MyException", "getAllQuestions: ${listOfQuestions.exception!!.localizedMessage}")
+            listOfQuestions.e = exception
+            Log.d("MyException", "getAllQuestions: ${listOfQuestions.e!!.localizedMessage}")
         }
         return listOfQuestions
     }
